@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Data and method – LosEnergy</title>
+<meta name="description" content="Every registered estimate, the daily receipts, the method, the delivery schema and the sources behind LosEnergy's generation estimates.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://losenergy.eu/data/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://losenergy.eu/data/">
+<meta property="og:site_name" content="LosEnergy">
+<meta property="og:title" content="LosEnergy – Data and method">
+<meta property="og:description" content="Every registered estimate, the daily receipts, the method and the delivery schema.">
+<meta property="og:image" content="https://losenergy.eu/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="../assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="LosEnergy home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="7" width="26" height="7.5" rx="1" fill="#52cc9f"/><rect x="3" y="17.5" width="20" height="7.5" rx="1" fill="#dbb67a"/></svg>
+      LosEnergy
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="../#record">Record</a>
+      <a href="../#coverage">Coverage</a>
+      <a href="../#team">Team</a>
+      <a class="nav-keep" href="#top" aria-current="page">Data</a>
+      <a class="nav-cta nav-keep" href="../#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <header class="page-head wrap" id="top">
+    <h1>Data and method</h1>
+    <p class="lead">Everything behind the numbers on the home page: every registered estimate, the daily receipts, how the estimates are made, what a delivery contains and where the data comes from.</p>
+    <ul class="toc" aria-label="On this page">
+      <li><a href="#record">The record</a></li>
+      <li><a href="#receipts">Receipts</a></li>
+      <li><a href="#method">Method</a></li>
+      <li><a href="#coverage">Coverage</a></li>
+      <li><a href="#delivery">Delivery</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ul>
+  </header>
+
+  <section class="sec wrap" id="record" aria-labelledby="record-title">
+    <div class="rail"><div class="rail-in">
+      <h2 id="record-title">The record</h2>
+      <p>Every registration, in the order it was made. An estimate stays sealed until the company reports.</p>
+      <p class="as-of">As of 14 November 2026</p>
+    </div></div>
+    <div class="content">
+      <div class="part">
+        <h3>How a call is made and scored</h3>
+        <p>After a reporting period closes, we register an estimate of what the company has not yet reported. For PNE’s nine months, that was the third quarter, added to the first half it had already published.</p>
+        <p>An estimate is registered again only if it moves by more than 0.5%. The last version registered before the day of the report is the one scored. A registration on the report day itself does not count, since reports come out before the market opens.</p>
+      </div>
+
+      <div class="part">
+        <h3>Every registration</h3>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Every registration">
+          <table class="ledger stack">
+            <thead>
+              <tr>
+                <th scope="col">Registered, UTC</th>
+                <th scope="col">Company</th>
+                <th scope="col">Period</th>
+                <th scope="col" class="r">Our estimate</th>
+                <th scope="col" class="r">Company’s figure</th>
+                <th scope="col" class="r">Error</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="num nowrap">2026-11-04<span class="sub">00:00:18</span></td>
+                <td class="lead-cell">PNE AG</td>
+                <td class="nowrap">9M 2026</td>
+                <td data-label="Our estimate" class="r num nowrap"><span class="ours">187.1 GWh</span><span class="sub">9M: 595.1 GWh</span></td>
+                <td data-label="Company’s figure" class="r num nowrap"><span class="theirs">181 GWh</span><span class="sub">9M: about 589 GWh</span></td>
+                <td data-label="Error" class="r num nowrap">+3.4%<span class="sub">9M: +1.0%</span></td>
+              </tr>
+              <tr>
+                <td class="num nowrap">2026-11-04<span class="sub">00:00:18</span></td>
+                <td class="lead-cell">7C Solarparken</td>
+                <td class="nowrap">9M 2026</td>
+                <td data-label="Our estimate" class="r muted">Sealed</td>
+                <td data-label="Company’s figure" class="r muted">Not yet reported</td>
+                <td data-label="Error" class="r muted">–</td>
+              </tr>
+              <tr>
+                <td class="num nowrap">2026-11-04<span class="sub">15:53:39</span></td>
+                <td class="lead-cell">7C Solarparken</td>
+                <td class="nowrap">9M 2026</td>
+                <td data-label="Our estimate" class="r muted">Revised, sealed</td>
+                <td data-label="Company’s figure" class="r muted">Not yet reported</td>
+                <td data-label="Error" class="r muted">–</td>
+              </tr>
+              <tr>
+                <td class="num nowrap">2026-11-05<span class="sub">17:16:42</span></td>
+                <td class="lead-cell">Solaria</td>
+                <td class="nowrap">9M 2026</td>
+                <td data-label="Our estimate" class="r muted">Sealed</td>
+                <td data-label="Company’s figure" class="r muted">Not yet reported</td>
+                <td data-label="Error" class="r muted">–</td>
+              </tr>
+              <tr>
+                <td class="num nowrap">2026-11-09<span class="sub">13:21:54</span></td>
+                <td class="lead-cell">Solaria</td>
+                <td class="nowrap">9M 2026</td>
+                <td data-label="Our estimate" class="r muted">Revised, sealed</td>
+                <td data-label="Company’s figure" class="r muted">Not yet reported</td>
+                <td data-label="Error" class="r muted">–</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fine" style="margin-top:16px">The first line of each figure is the part scored: for PNE, the third quarter. 9M is the nine months to September. A sealed estimate’s value is added here on the day the company reports.</p>
+      </div>
+
+      <div class="part">
+        <h3>PNE AG, third quarter, against two baselines</h3>
+        <p>PNE’s nine-month statement on 12 November put output at about 589 GWh. Less the 408 GWh it reported for the first half, the third quarter came to 181 GWh.</p>
+        <figure class="chart" aria-labelledby="err-title">
+          <figcaption id="err-title">Error against PNE’s third-quarter figure</figcaption>
+          <div class="chart-rows has-zero-label" role="img" aria-label="Our estimate was 3.4% above PNE's figure. A seasonal normal would have been 11.7% below it, and the same quarter last year 14.6% below it.">
+            <div class="chart-row">
+              <span class="chart-label">Our estimate</span>
+              <div class="track">
+                <span class="grid-line" style="left:4.545%"></span><span class="grid-line" style="left:27.273%"></span><span class="grid-line" style="left:50%"></span><span class="grid-line" style="left:95.455%"></span>
+                <span class="zero" style="left:72.727%"><span class="zero-label">PNE’s figure</span></span>
+                <span class="seg ours" style="left:72.727%; width:15.455%"></span>
+              </div>
+              <span class="chart-value">+3.4%</span>
+            </div>
+            <div class="chart-row">
+              <span class="chart-label">Seasonal normal</span>
+              <div class="track">
+                <span class="grid-line" style="left:4.545%"></span><span class="grid-line" style="left:27.273%"></span><span class="grid-line" style="left:50%"></span><span class="grid-line" style="left:95.455%"></span>
+                <span class="zero" style="left:72.727%"></span>
+                <span class="seg base" style="left:19.545%; width:53.182%"></span>
+              </div>
+              <span class="chart-value">−11.7%</span>
+            </div>
+            <div class="chart-row">
+              <span class="chart-label">Same quarter last year</span>
+              <div class="track">
+                <span class="grid-line" style="left:4.545%"></span><span class="grid-line" style="left:27.273%"></span><span class="grid-line" style="left:50%"></span><span class="grid-line" style="left:95.455%"></span>
+                <span class="zero" style="left:72.727%"></span>
+                <span class="seg base" style="left:6.364%; width:66.364%"></span>
+              </div>
+              <span class="chart-value">−14.6%</span>
+            </div>
+          </div>
+          <div class="axis" aria-hidden="true">
+            <span class="spacer"></span>
+            <div class="ticks"><span style="left:4.545%">−15%</span><span style="left:27.273%">−10%</span><span style="left:50%">−5%</span><span style="left:72.727%">0</span><span style="left:95.455%">+5%</span></div>
+            <span class="spacer"></span>
+          </div>
+          <dl class="chart-note fine">
+            <div><dt>Seasonal normal:</dt> <dd>the fleet’s capacity at a normal yield for those months.</dd></div>
+            <div><dt>Same quarter last year:</dt> <dd>last year’s output for the same months, scaled to the current fleet.</dd></div>
+          </dl>
+        </figure>
+      </div>
+
+      <div class="part">
+        <h3>Seal-by dates, full-year 2026</h3>
+        <p>We seal each full-year estimate by the dates below. Only PNE has announced its date; for the others we set the deadline early, from their past release dates.</p>
+        <div class="cal">
+          <div class="month">
+            <h4>January 2027</h4>
+            <div class="month-bar" aria-hidden="true"><i style="left:63.33%"></i><i style="left:90%"></i></div>
+            <ul>
+              <li><time datetime="2027-01-20">20</time><span>EDP Renováveis</span></li>
+              <li><time datetime="2027-01-28">28</time><span>Greencoat UK Wind</span></li>
+            </ul>
+          </div>
+          <div class="month">
+            <h4>February 2027</h4>
+            <div class="month-bar" aria-hidden="true"><i style="left:3.70%"></i><i style="left:7.41%"></i><i style="left:11.11%"></i><i style="left:85.19%"></i></div>
+            <ul>
+              <li><time datetime="2027-02-02">2</time><span>TRIG</span></li>
+              <li><time datetime="2027-02-03">3</time><span>RWE</span></li>
+              <li><time datetime="2027-02-04">4</time><span>Ørsted</span></li>
+              <li><time datetime="2027-02-24">24</time><span>Solaria</span></li>
+            </ul>
+          </div>
+          <div class="month">
+            <h4>March 2027</h4>
+            <div class="month-bar" aria-hidden="true"><i style="left:76.67%"></i><i style="left:83.33%"></i></div>
+            <ul>
+              <li><time datetime="2027-03-24">24</time><span>PNE <span class="tag">date announced</span></span></li>
+              <li><time datetime="2027-03-26">26</time><span>Energiekontor</span></li>
+            </ul>
+          </div>
+          <div class="month">
+            <h4>April 2027</h4>
+            <div class="month-bar" aria-hidden="true"><i style="left:48.28%"></i></div>
+            <ul>
+              <li><time datetime="2027-04-15">15</time><span>clearvise</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="receipts" aria-labelledby="receipts-title">
+    <div class="rail"><div class="rail-in">
+      <h2 id="receipts-title">Receipts</h2>
+      <p>Each morning’s vintage is fingerprinted and committed to version control the same morning.</p>
+    </div></div>
+    <div class="content">
+      <p>A receipt records when the vintage was written, the code version that wrote it, which companies were published or withheld, and two <span class="nowrap">SHA-256</span> fingerprints: one of the vintage’s manifest, and one over the list of every file in it with each file’s own fingerprint. Change one number in one file and the second fingerprint no longer matches.</p>
+      <figure class="receipt" aria-labelledby="receipt-title">
+        <figcaption id="receipt-title">First live receipt, 13 November 2026</figcaption>
+        <dl>
+          <div><dt>Committed</dt><dd class="mono num">2026-11-13 06:46:58 UTC</dd></div>
+          <div><dt>Code version</dt><dd class="mono">d7e03142ab40</dd></div>
+          <div><dt>Companies</dt><dd>10 published, none withheld</dd></div>
+          <div><dt>Files</dt><dd class="num">3</dd></div>
+          <div class="wide"><dt>Manifest SHA-256</dt><dd class="mono hash" data-seal="1569ddf078d8a6729022131c9ec666333edb5f7891b801a25507725388fee130">1569ddf078d8a6729022131c9ec666333edb5f7891b801a25507725388fee130</dd></div>
+          <div class="wide"><dt>Data SHA-256</dt><dd class="mono hash" data-seal="8097359b7fc8bbeff7591a38fddcc26bceca60ba537aefe0818a26143960e5ed">8097359b7fc8bbeff7591a38fddcc26bceca60ba537aefe0818a26143960e5ed</dd></div>
+        </dl>
+      </figure>
+      <p style="margin-top:32px">To check a vintage we have sent you, its manifest must give the same fingerprint as the receipt:</p>
+      <code class="code-line mono">sha256sum _manifest.json</code>
+      <p class="fine" style="margin-top:20px">Receipts are kept in our version-controlled ledger, one per morning, and are open for audit on request.</p>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="method" aria-labelledby="method-title">
+    <div class="rail"><div class="rail-in">
+      <h2 id="method-title">Method</h2>
+      <p>Three steps, every morning.</p>
+    </div></div>
+    <div class="content">
+      <ol class="steps">
+        <li>
+          <div>
+            <h3>Map each fleet</h3>
+            <p>From each company’s own reports we record which assets it owns, their capacity, the bidding zone each one sits in and the company’s share. Maps are versioned: an estimate always uses the map as it stood on that day. A company whose map has drifted more than 5% from the capacity it declares is withheld, with the reason recorded, rather than published with a known bias.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Read the grid</h3>
+            <p>Every morning we take actual generation and installed capacity by zone and production type from the ENTSO-E Transparency Platform. In Great Britain we read the meters of 34 wind farms, 65 units in all, from Elexon’s settlement data, for the four companies with large British fleets. A farm in more than one portfolio, such as London Array, is read once and shared by stake.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>Calibrate and seal</h3>
+            <p>Each estimate is scaled by how the model compared with the company’s own past reports, then written into the morning’s vintage, fingerprinted and committed.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="part" style="margin-top:72px">
+        <h3>Where meters exist: Ørsted’s UK offshore wind, Q1 2023 to September 2026</h3>
+        <p>A backtest, run after the reports were out: it shows what the method can do, not a sealed record. Read from each farm’s own meters, our estimate came within −0.1% to +1.2% of what Ørsted reported, in every period. Built from zone data alone, it ran 11% to 26% low.</p>
+        <figure class="chart ranges" aria-labelledby="range-title">
+          <figcaption id="range-title">Range of errors across all periods</figcaption>
+          <div class="chart-rows has-zero-label" role="img" aria-label="From farm meters, errors ranged from minus 0.1% to plus 1.2%. From zone data alone, from minus 26% to minus 11%.">
+            <div class="chart-row">
+              <span class="chart-label">From farm meters</span>
+              <div class="track">
+                <span class="grid-line" style="left:28.571%"></span><span class="grid-line" style="left:57.143%"></span>
+                <span class="zero" style="left:85.714%"><span class="zero-label">Ørsted’s figure</span></span>
+                <span class="seg ours" style="left:85.429%; width:3.714%; min-width:4px"></span>
+              </div>
+              <span class="chart-value">−0.1 to +1.2%</span>
+            </div>
+            <div class="chart-row">
+              <span class="chart-label">From zone data alone</span>
+              <div class="track">
+                <span class="grid-line" style="left:28.571%"></span><span class="grid-line" style="left:57.143%"></span>
+                <span class="zero" style="left:85.714%"></span>
+                <span class="seg base" style="left:11.429%; width:42.857%"></span>
+              </div>
+              <span class="chart-value">−26 to −11%</span>
+            </div>
+          </div>
+          <div class="axis" aria-hidden="true">
+            <span class="spacer"></span>
+            <div class="ticks"><span class="first" style="left:0%">−30%</span><span style="left:28.571%">−20%</span><span style="left:57.143%">−10%</span><span style="left:85.714%">0</span></div>
+            <span class="spacer"></span>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="coverage" aria-labelledby="coverage-title">
+    <div class="rail"><div class="rail-in">
+      <h2 id="coverage-title">Coverage</h2>
+      <p>Bidding zones in which each company has capacity in our ownership map.</p>
+    </div></div>
+    <div class="content">
+      <div class="matrix-scroll" tabindex="0" role="region" aria-label="Coverage by company and bidding zone">
+        <table class="matrix">
+          <caption class="sr-only">Bidding zones in which each company has capacity in our ownership map</caption>
+          <colgroup><col class="c-co"><col class="c-mw"><col><col class="c-zw"><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup>
+          <thead><tr><th class="co" scope="col">Company</th><th class="mw" scope="col">MW</th><th scope="col"><abbr title="Belgium">BE</abbr></th><th scope="col"><abbr title="Germany and Luxembourg">DE-LU</abbr></th><th scope="col"><abbr title="Denmark, west">DK1</abbr></th><th scope="col"><abbr title="Spain">ES</abbr></th><th scope="col"><abbr title="Finland">FI</abbr></th><th scope="col"><abbr title="France">FR</abbr></th><th scope="col"><abbr title="Great Britain">GB</abbr></th><th scope="col"><abbr title="Greece">GR</abbr></th><th scope="col"><abbr title="Hungary">HU</abbr></th><th scope="col"><abbr title="Ireland and Northern Ireland">IE</abbr></th><th scope="col"><abbr title="Italy">IT</abbr></th><th scope="col"><abbr title="Netherlands">NL</abbr></th><th scope="col"><abbr title="Poland">PL</abbr></th><th scope="col"><abbr title="Portugal">PT</abbr></th><th scope="col"><abbr title="Romania">RO</abbr></th><th scope="col"><abbr title="Sweden">SE</abbr></th><th scope="col"><abbr title="Türkiye">TR</abbr></th></tr></thead>
+          <tbody>
+            <tr><th class="co" scope="row">RWE<span class="tk">ETR:RWE</span></th><td class="mw">47,368*</td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Germany and Luxembourg</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Spain</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">France</span></td><td><i class="dot metered" aria-hidden="true"></i><span class="sr-only">Great Britain, metered</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Italy</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Netherlands</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Poland</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Sweden</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Türkiye</span></td></tr>
+            <tr><th class="co" scope="row">EDP Renováveis<span class="tk">ELI:EDPR</span></th><td class="mw">18,795</td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Belgium</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Germany and Luxembourg</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Spain</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">France</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Great Britain</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Greece</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Hungary</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Italy</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Netherlands</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Poland</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Portugal</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Romania</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td></tr>
+            <tr><th class="co" scope="row">Ørsted<span class="tk">CPH:ORSTED</span></th><td class="mw">13,507</td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Germany and Luxembourg</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Denmark, west</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">France</span></td><td><i class="dot metered" aria-hidden="true"></i><span class="sr-only">Great Britain, metered</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Ireland and Northern Ireland</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Netherlands</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td></tr>
+            <tr><th class="co" scope="row">Solaria<span class="tk">BME:SLR</span></th><td class="mw">3,033</td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Spain</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Greece</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Italy</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Portugal</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td></tr>
+            <tr><th class="co" scope="row">TRIG<span class="tk">LON:TRIG</span></th><td class="mw">2,269</td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Germany and Luxembourg</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Spain</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">France</span></td><td><i class="dot metered" aria-hidden="true"></i><span class="sr-only">Great Britain, metered</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Sweden</span></td><td><i class="none" aria-hidden="true"></i></td></tr>
+            <tr><th class="co" scope="row">Greencoat UK Wind<span class="tk">LON:UKW</span></th><td class="mw">1,942</td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot metered" aria-hidden="true"></i><span class="sr-only">Great Britain, metered</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td></tr>
+            <tr><th class="co" scope="row">7C Solarparken<span class="tk">ETR:HRPK</span></th><td class="mw">504</td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Belgium</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Germany and Luxembourg</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td></tr>
+            <tr><th class="co" scope="row">PNE<span class="tk">ETR:PNE3</span></th><td class="mw">478</td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Germany and Luxembourg</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td></tr>
+            <tr><th class="co" scope="row">Energiekontor<span class="tk">ETR:EKT</span></th><td class="mw">460.6</td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Germany and Luxembourg</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Great Britain</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Portugal</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td></tr>
+            <tr><th class="co" scope="row">clearvise<span class="tk">ETR:ABO</span></th><td class="mw">388</td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Germany and Luxembourg</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Finland</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">France</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Ireland and Northern Ireland</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul class="cov-list" aria-label="Coverage by company">
+        <li><div class="cov-head"><span class="cov-name">RWE<span class="tk">ETR:RWE</span></span><span class="cov-mw">47,368*<small>MW</small></span></div><div class="cov-zones"><span><abbr title="Germany and Luxembourg">DE-LU</abbr></span><span><abbr title="Spain">ES</abbr></span><span><abbr title="France">FR</abbr></span><span><abbr title="Great Britain">GB</abbr><i class="dot metered" aria-hidden="true"></i><span class="sr-only">metered</span></span><span><abbr title="Italy">IT</abbr></span><span><abbr title="Netherlands">NL</abbr></span><span><abbr title="Poland">PL</abbr></span><span><abbr title="Sweden">SE</abbr></span><span><abbr title="Türkiye">TR</abbr></span></div></li>
+        <li><div class="cov-head"><span class="cov-name">EDP Renováveis<span class="tk">ELI:EDPR</span></span><span class="cov-mw">18,795<small>MW</small></span></div><div class="cov-zones"><span><abbr title="Belgium">BE</abbr></span><span><abbr title="Germany and Luxembourg">DE-LU</abbr></span><span><abbr title="Spain">ES</abbr></span><span><abbr title="France">FR</abbr></span><span><abbr title="Great Britain">GB</abbr></span><span><abbr title="Greece">GR</abbr></span><span><abbr title="Hungary">HU</abbr></span><span><abbr title="Italy">IT</abbr></span><span><abbr title="Netherlands">NL</abbr></span><span><abbr title="Poland">PL</abbr></span><span><abbr title="Portugal">PT</abbr></span><span><abbr title="Romania">RO</abbr></span></div></li>
+        <li><div class="cov-head"><span class="cov-name">Ørsted<span class="tk">CPH:ORSTED</span></span><span class="cov-mw">13,507<small>MW</small></span></div><div class="cov-zones"><span><abbr title="Germany and Luxembourg">DE-LU</abbr></span><span><abbr title="Denmark, west">DK1</abbr></span><span><abbr title="France">FR</abbr></span><span><abbr title="Great Britain">GB</abbr><i class="dot metered" aria-hidden="true"></i><span class="sr-only">metered</span></span><span><abbr title="Ireland and Northern Ireland">IE</abbr></span><span><abbr title="Netherlands">NL</abbr></span></div></li>
+        <li><div class="cov-head"><span class="cov-name">Solaria<span class="tk">BME:SLR</span></span><span class="cov-mw">3,033<small>MW</small></span></div><div class="cov-zones"><span><abbr title="Spain">ES</abbr></span><span><abbr title="Greece">GR</abbr></span><span><abbr title="Italy">IT</abbr></span><span><abbr title="Portugal">PT</abbr></span></div></li>
+        <li><div class="cov-head"><span class="cov-name">TRIG<span class="tk">LON:TRIG</span></span><span class="cov-mw">2,269<small>MW</small></span></div><div class="cov-zones"><span><abbr title="Germany and Luxembourg">DE-LU</abbr></span><span><abbr title="Spain">ES</abbr></span><span><abbr title="France">FR</abbr></span><span><abbr title="Great Britain">GB</abbr><i class="dot metered" aria-hidden="true"></i><span class="sr-only">metered</span></span><span><abbr title="Sweden">SE</abbr></span></div></li>
+        <li><div class="cov-head"><span class="cov-name">Greencoat UK Wind<span class="tk">LON:UKW</span></span><span class="cov-mw">1,942<small>MW</small></span></div><div class="cov-zones"><span><abbr title="Great Britain">GB</abbr><i class="dot metered" aria-hidden="true"></i><span class="sr-only">metered</span></span></div></li>
+        <li><div class="cov-head"><span class="cov-name">7C Solarparken<span class="tk">ETR:HRPK</span></span><span class="cov-mw">504<small>MW</small></span></div><div class="cov-zones"><span><abbr title="Belgium">BE</abbr></span><span><abbr title="Germany and Luxembourg">DE-LU</abbr></span></div></li>
+        <li><div class="cov-head"><span class="cov-name">PNE<span class="tk">ETR:PNE3</span></span><span class="cov-mw">478<small>MW</small></span></div><div class="cov-zones"><span><abbr title="Germany and Luxembourg">DE-LU</abbr></span></div></li>
+        <li><div class="cov-head"><span class="cov-name">Energiekontor<span class="tk">ETR:EKT</span></span><span class="cov-mw">460.6<small>MW</small></span></div><div class="cov-zones"><span><abbr title="Germany and Luxembourg">DE-LU</abbr></span><span><abbr title="Great Britain">GB</abbr></span><span><abbr title="Portugal">PT</abbr></span></div></li>
+        <li><div class="cov-head"><span class="cov-name">clearvise<span class="tk">ETR:ABO</span></span><span class="cov-mw">388<small>MW</small></span></div><div class="cov-zones"><span><abbr title="Germany and Luxembourg">DE-LU</abbr></span><span><abbr title="Finland">FI</abbr></span><span><abbr title="France">FR</abbr></span><span><abbr title="Ireland and Northern Ireland">IE</abbr></span></div></li>
+      </ul>
+      <div class="legend">
+        <span class="only-matrix"><i class="dot" aria-hidden="true"></i>Capacity in the zone</span>
+        <span><i class="dot metered" aria-hidden="true"></i>Read from the farms’ own meters</span>
+      </div>
+      <p class="fine" style="margin-top:16px">MW is the capacity each company declares, as recorded in our ownership map. *RWE declares 47,368 MW; 33,551 MW of it is mapped to the zones shown.</p>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="delivery" aria-labelledby="delivery-title">
+    <div class="rail"><div class="rail-in">
+      <h2 id="delivery-title">Delivery</h2>
+      <p>Two clocks on every row: the day the electricity was produced, and the moment we could know it.</p>
+    </div></div>
+    <div class="content">
+      <p class="big">Rows are only ever added. A revision is a new row with a later timestamp, so any past morning can be rebuilt exactly as it stood. That answers the question every due diligence asks: could you have known this on that date?</p>
+      <dl class="fields">
+        <div><dt class="mono">event_date</dt><dd>The day the electricity was produced</dd></div>
+        <div><dt class="mono">as_of_ts</dt><dd>The moment we could know it, in UTC</dd></div>
+        <div><dt class="mono">revision_n</dt><dd>0 for the first estimate of that day, then 1, 2 and so on</dd></div>
+        <div><dt class="mono">ticker, isin</dt><dd>The company</dd></div>
+        <div><dt class="mono">zone</dt><dd>The bidding zone</dd></div>
+        <div><dt class="mono">technology</dt><dd>The production type, as grid operators name it</dd></div>
+        <div><dt class="mono">generation_mwh</dt><dd>Estimated generation, in megawatt-hours</dd></div>
+        <div><dt class="mono">coverage_pct</dt><dd>The share of the day’s intervals with grid data</dd></div>
+        <div><dt class="mono">path</dt><dd>Metered, attributed from zone data, or mixed</dd></div>
+        <div><dt class="mono">map_version</dt><dd>The ownership map the estimate used</dd></div>
+        <div><dt class="mono">method_version</dt><dd>The method, so a change of method is never mistaken for a revision of data</dd></div>
+        <div><dt class="mono">source_fingerprints</dt><dd>Fingerprints of the input data</dd></div>
+        <div><dt class="mono">confidence</dt><dd>Verified, estimated or unverified</dd></div>
+      </dl>
+      <div class="part">
+        <h3>History</h3>
+        <p>Live, point-in-time vintages since 13 November 2026. History before that is rebuilt with the same code, from 2021 for five companies and from 2023 for the other five. Rebuilt history runs on today’s data, which grid operators may have revised since, so it is a backtest, not a record of what was knowable at the time.</p>
+      </div>
+      <div class="part">
+        <h3>Files</h3>
+        <p>One vintage per morning, as Parquet files, with a manifest that lists the sources the vintage rests on, their licence terms and the reason for any company withheld. The column order is fixed, and a change of method raises the method version.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="sources" aria-labelledby="sources-title">
+    <div class="rail"><div class="rail-in">
+      <h2 id="sources-title">Sources</h2>
+      <p>Public data only. No personal data, and nothing from inside the companies.</p>
+    </div></div>
+    <div class="content">
+      <ul class="sources">
+        <li><b>ENTSO-E Transparency Platform</b><span>Actual generation and installed capacity by bidding zone and production type</span><em>Source: ENTSO-E Transparency Platform.</em></li>
+        <li><b>Elexon BMRS</b><span>Metered output of British wind farms, from settlement data</span><em>Contains BSC information licensed under the <a href="https://www.elexon.co.uk/bsc/data/open-data-requests/bsc-open-data-licence/">BSC Open Data Licence</a>.</em></li>
+        <li><b>National Energy System Operator</b><span>British embedded wind and solar generation</span><em>Supported by National Energy SO Open Data</em></li>
+        <li><b>Department for Energy Security and Net Zero</b><span>British installed capacity</span><em>Contains public sector information licensed under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>.</em></li>
+        <li><b>National capacity statistics</b><span>Installed capacity for Spain, Portugal, Ireland, Sweden and Belgium, from grid operators and industry bodies, including Red Eléctrica and REN</span></li>
+        <li><b>Company reports</b><span>Fleets, stakes and reported production, from annual and interim reports</span></li>
+      </ul>
+      <p style="margin-top:24px">The licence terms of every source are recorded with each vintage and are available on request.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot wrap">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <a class="brand" href="../#top" aria-label="LosEnergy home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="7" width="26" height="7.5" rx="1" fill="#52cc9f"/><rect x="3" y="17.5" width="20" height="7.5" rx="1" fill="#dbb67a"/></svg>
+        LosEnergy
+      </a>
+      <p><a href="">Data and method</a></p>
+    </div>
+    <div class="foot-notes">
+      <p>Estimates on this site are derived from public data, including the ENTSO-E Transparency Platform and Elexon BMRS. Contains BSC information licensed under the <a href="https://www.elexon.co.uk/bsc/data/open-data-requests/bsc-open-data-licence/">BSC Open Data Licence</a>.</p>
+      <p>Nothing on this site is investment advice. LosEnergy is a company in formation.</p>
+      <p>This site sets no cookies and loads nothing from other sites. It is hosted on GitHub Pages, which logs visitors’ IP addresses for security.</p>
+      <p>© 2026 LosEnergy</p>
+    </div>
+  </div>
+</footer>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>

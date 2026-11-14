@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found – LosEnergy</title>
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+@font-face {
+  font-family: "Archivo"; font-style: normal; font-display: swap;
+  font-weight: 100 900; font-stretch: 62% 125%;
+  src: url("/assets/fonts/archivo.woff2") format("woff2-variations"), url("/assets/fonts/archivo.woff2") format("woff2");
+}
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #000; }
+body {
+  min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+  padding: 48px max(20px, env(safe-area-inset-left));
+  font-family: "Archivo", ui-sans-serif, system-ui, sans-serif; color: #c8ccc5; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+main { width: 100%; max-width: 1144px; margin: 0 auto; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: #eeece4; text-decoration: none; font-size: 1.125rem; font-weight: 620; font-stretch: 116%; }
+.brand svg { width: 26px; height: 26px; }
+h1 { margin: 56px 0 0; color: #eeece4; font-size: clamp(2.25rem, 1.2rem + 3.6vw, 4rem); line-height: 1.04; font-weight: 560; font-stretch: 110%; letter-spacing: -0.024em; }
+p { margin: 18px 0 0; max-width: 38em; font-size: 1.125rem; }
+a.home { color: #52cc9f; text-underline-offset: 5px; }
+:focus-visible { outline: 2px solid #eeece4; outline-offset: 3px; border-radius: 3px; }
+</style>
+</head>
+<body>
+<main>
+  <a class="brand" href="/" aria-label="LosEnergy home">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="7" width="26" height="7.5" rx="1" fill="#52cc9f"/><rect x="3" y="17.5" width="20" height="7.5" rx="1" fill="#dbb67a"/></svg>
+    LosEnergy
+  </a>
+  <h1>This page doesn’t exist.</h1>
+  <p>The address may be mistyped, or the page has moved. Everything on this site is on <a class="home" href="/">the home page</a>.</p>
+</main>
+</body>
+</html>

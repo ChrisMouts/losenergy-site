@@ -41,68 +41,176 @@
     });
   }
 
-  /* ---- Home page: the coverage map ---- */
+  /* ---- Home page: the record timeline ---- */
+  (function () {
+    var wrap = document.querySelector("[data-timeline]");
+    var src = document.getElementById("record-data");
+    if (!wrap || !src) return;
+    var html = JSON.parse(src.textContent);
+    var tl = wrap.querySelector(".tl");
+    var detail = wrap.querySelector("[data-tl-detail]");
+    var rows = wrap.querySelectorAll(".tl-row");
+    var def = Number(detail.getAttribute("data-default"));
+    var pinned = null, shown = def;
+    function show(i) {
+      if (shown !== i) { detail.innerHTML = html[i]; shown = i; }
+      for (var k = 0; k < rows.length; k++) rows[k].setAttribute("aria-pressed", pinned === k ? "true" : "false");
+    }
+    function restore() { show(pinned === null ? def : pinned); }
+    Array.prototype.forEach.call(rows, function (r) {
+      var i = Number(r.getAttribute("data-call"));
+      r.addEventListener("mouseenter", function () { show(i); });
+      r.addEventListener("mouseleave", restore);
+      r.addEventListener("focus", function () { show(i); });
+      r.addEventListener("blur", restore);
+      r.addEventListener("click", function () { pinned = pinned === i ? null : i; restore(); });
+    });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && pinned !== null) { pinned = null; restore(); } });
+    if (!reduce && canObserve) {
+      tl.classList.add("pre");
+      onceVisible(tl, 0.25, function () {
+        requestAnimationFrame(function () {
+          tl.classList.remove("pre"); tl.classList.add("reveal");
+          setTimeout(function () { tl.classList.remove("reveal"); }, 2600);
+        });
+      });
+    }
+  })();
+
+  /* ---- Home page: the steps draw themselves once; the numbers count up once ---- */
+  (function () {
+    var steps = document.querySelector("[data-steps]");
+    if (steps && !reduce && canObserve) {
+      steps.classList.add("pre");
+      onceVisible(steps, 0.3, function () {
+        requestAnimationFrame(function () {
+          steps.classList.remove("pre"); steps.classList.add("reveal");
+          setTimeout(function () { steps.classList.remove("reveal"); }, 2200);
+        });
+      });
+    }
+    var nums = document.querySelectorAll("[data-count]");
+    if (!nums.length || reduce || !canObserve) return;
+    var fmt = function (n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ","); };
+    // Printed, or saved as PDF, every number shows its value whether or not it was scrolled to.
+    window.addEventListener("beforeprint", function () {
+      Array.prototype.forEach.call(nums, function (el) { if (el.getAttribute("aria-label")) el.textContent = el.getAttribute("aria-label"); });
+    });
+    Array.prototype.forEach.call(nums, function (el) {
+      var target = Number(el.getAttribute("data-count")), suffix = el.getAttribute("data-suffix") || "";
+      var final = el.textContent;
+      el.setAttribute("aria-label", final);
+      el.textContent = "0" + suffix;
+      onceVisible(el, 0.6, function () {
+        var start = null, dur = 1100;
+        var step = function (ts) {
+          if (start === null) start = ts;
+          var p = Math.min(1, (ts - start) / dur), e = 1 - Math.pow(1 - p, 3);
+          el.textContent = fmt(Math.round(target * e)) + suffix;
+          if (p < 1) requestAnimationFrame(step); else el.textContent = final;
+        };
+        requestAnimationFrame(step);
+      });
+    });
+  })();
+
+  /* ---- Home page: how closely we see each country ---- */
   var root = document.querySelector("[data-coverage]");
   var source = document.getElementById("coverage-data");
   if (!root || !source) return;
   var data = JSON.parse(source.textContent);
   var mapBox = root.querySelector(".cov-map");
   var svg = root.querySelector("svg");
-  var outline = svg.querySelector(".z-outline");
+  var outline = svg.querySelector(".c-outline");
   var panel = root.querySelector("[data-panel]");
   var defaultPanel = panel.innerHTML;
-  var zoneEls = svg.querySelectorAll(".z");
-  var labelEls = svg.querySelectorAll(".zl");
+  var hits = svg.querySelectorAll(".ct");
+  var layers = svg.querySelectorAll("[data-country]:not(.ct)");
   var buttons = root.querySelectorAll("[data-company]");
-  var pinned = null; // {kind: "zone"|"company", key}
+  var pinned = null; // {kind: "country"|"company"|"key", key}
+  var showing = "default"; // what the panel holds now; it is rewritten only when that changes
 
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  function zoneEl(code) { return svg.querySelector('.z[data-zone="' + code + '"]'); }
-  function labelEl(code) { return svg.querySelector('.zl[data-zone="' + code + '"]'); }
+  function shape(code) { var el = svg.querySelector("#c-" + code); return el ? el.getAttribute("d") : ""; }
+  function names(list) { return list.map(function (i) { return esc(data.companies[i].name); }); }
 
   function clear() {
-    svg.classList.remove("has-company");
+    svg.classList.remove("has-sel");
     outline.setAttribute("d", "");
-    for (var i = 0; i < zoneEls.length; i++) { zoneEls[i].classList.remove("is-on"); zoneEls[i].setAttribute("aria-pressed", "false"); }
-    for (var j = 0; j < labelEls.length; j++) labelEls[j].classList.remove("is-on");
+    for (var i = 0; i < layers.length; i++) layers[i].classList.remove("is-on");
+    for (var j = 0; j < hits.length; j++) hits[j].setAttribute("aria-pressed", "false");
     for (var k = 0; k < buttons.length; k++) buttons[k].setAttribute("aria-pressed", "false");
   }
+  function light(codes) {
+    svg.classList.add("has-sel");
+    for (var i = 0; i < layers.length; i++) {
+      if (codes.indexOf(layers[i].getAttribute("data-country")) !== -1) layers[i].classList.add("is-on");
+    }
+  }
 
-  function showZone(code, pin) {
+  function showCountry(code, pin) {
     clear();
-    var z = data.zones[code], el = zoneEl(code);
-    outline.setAttribute("d", el.getAttribute("d"));
-    if (pin) el.setAttribute("aria-pressed", "true");
-    var names = z.companies.map(function (i) { return "<li>" + esc(data.companies[i].name) + "</li>"; }).join("");
-    var n = z.companies.length;
+    var c = data.countries[code], cls = data.classes[c.k];
+    outline.setAttribute("d", shape(code));
+    if (pin) svg.querySelector('.ct[data-country="' + code + '"]').setAttribute("aria-pressed", "true");
+    var who = names(c.companies);
+    showing = "country";
     panel.innerHTML =
-      "<h3>" + esc(z.name) + "</h3>" +
-      '<p class="cp-sub">' + esc(z.label) + ", " + n + (n === 1 ? " company" : " companies") + "</p>" +
-      "<ul>" + names + "</ul>" +
-      (code === "GB" ? '<p class="cp-note">Four of them are read from the farms’ own meters.</p>' : "");
+      "<h3>" + esc(c.name) + "</h3>" +
+      '<p class="cp-sub">Read ' + esc(c.how || cls.short) + "</p>" +
+      "<dl>" +
+      "<dt>What we read</dt><dd>" + esc(c.read || "The country’s output by production type, every day, from its grid operators.") + "</dd>" +
+      "<dt>What it feeds</dt><dd>" + esc(c.feeds || "The estimates of the companies with plants here.") + "</dd>" +
+      "<dt>" + who.length + (who.length === 1 ? " company" : " companies") + " here</dt><dd>" + who.join(", ") + "</dd>" +
+      "</dl>";
   }
 
   function showCompany(i, pin) {
     clear();
     var c = data.companies[i];
-    svg.classList.add("has-company");
-    c.zones.forEach(function (code) {
-      zoneEl(code).classList.add("is-on");
-      var l = labelEl(code); if (l) l.classList.add("is-on");
-    });
+    light(c.countries);
     if (pin) buttons[i].setAttribute("aria-pressed", "true");
-    var labels = c.zones.map(function (code) { return data.zones[code].label; }).join(", ");
+    var plant = c.plant.map(function (p) { return "<li><b>" + esc(data.countries[p[0]].name) + ":</b> " + esc(p[1]) + "</li>"; }).join("");
+    var plantCodes = c.plant.map(function (p) { return p[0]; });
+    var rest = c.countries.filter(function (code) { return plantCodes.indexOf(code) === -1; })
+      .map(function (code) { return esc(data.countries[code].name); });
+    showing = "company";
     panel.innerHTML =
       "<h3>" + esc(c.name) + "</h3>" +
-      '<p class="cp-sub">' + esc(c.ticker) + ", " + esc(c.mw) + " MW declared</p>" +
-      "<p>" + c.zones.length + (c.zones.length === 1 ? " zone: " : " zones: ") + esc(labels) + "</p>" +
-      (c.note ? '<p class="cp-note">' + esc(c.note) + "</p>" : "") +
-      (c.metered ? '<p class="cp-note">Great Britain is read from the farms’ own meters.</p>' : "");
+      '<p class="cp-sub">' + esc(c.ticker) + ", " + esc(c.mw) + " MW declared, in " + c.countries.length +
+      (c.countries.length === 1 ? " country" : " countries") + "</p>" +
+      "<dl>" +
+      (plant ? '<dt>Read plant by plant</dt><dd><ul class="cp-plain">' + plant + "</ul></dd>" : "") +
+      (rest.length ? "<dt>Read from the country’s output</dt><dd>" + rest.join(", ") + "</dd>" : "") +
+      "</dl>" +
+      (c.countries.indexOf("DE") !== -1 ? '<p class="cp-note">Its German plants are checked against the national register.</p>' : "") +
+      (c.note ? '<p class="cp-note">' + esc(c.note) + "</p>" : "");
   }
 
+  function showKey(k, pin) {
+    clear();
+    var codes = Object.keys(data.countries).filter(function (code) { return String(data.countries[code].k) === String(k); });
+    light(codes);
+    defaults();
+    var keys = panel.querySelectorAll(".lg [data-k]");
+    for (var i = 0; i < keys.length; i++) keys[i].setAttribute("aria-pressed", pin && keys[i].getAttribute("data-k") === String(k) ? "true" : "false");
+  }
+
+  // Rewriting the panel while the pointer is on one of its key rows would swallow the click, so the
+  // default panel is put back only when something else is showing.
+  function defaults() {
+    if (showing !== "default") { panel.innerHTML = defaultPanel; showing = "default"; }
+  }
   function restore() {
-    if (!pinned) { clear(); panel.innerHTML = defaultPanel; return; }
-    if (pinned.kind === "zone") showZone(pinned.key, true); else showCompany(pinned.key, true);
+    if (!pinned) {
+      clear(); defaults();
+      var keys = panel.querySelectorAll(".lg [data-k]");
+      for (var i = 0; i < keys.length; i++) keys[i].setAttribute("aria-pressed", "false");
+      return;
+    }
+    if (pinned.kind === "country") showCountry(pinned.key, true);
+    else if (pinned.kind === "company") showCompany(pinned.key, true);
+    else showKey(pinned.key, true);
   }
   function toggle(kind, key) {
     if (pinned && pinned.kind === kind && pinned.key === key) pinned = null;
@@ -110,16 +218,15 @@
     restore();
   }
 
-  Array.prototype.forEach.call(zoneEls, function (el) {
-    var code = el.getAttribute("data-zone");
-    el.addEventListener("mouseenter", function () { showZone(code, false); });
+  Array.prototype.forEach.call(hits, function (el) {
+    var code = el.getAttribute("data-country");
+    el.addEventListener("mouseenter", function () { showCountry(code, false); });
     el.addEventListener("mouseleave", restore);
-    el.addEventListener("focus", function () { showZone(code, false); });
+    el.addEventListener("focus", function () { showCountry(code, false); });
     el.addEventListener("blur", restore);
-    el.addEventListener("click", function () { toggle("zone", code); });
+    el.addEventListener("click", function () { toggle("country", code); });
     el.addEventListener("keydown", function (e) {
-      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle("zone", code); }
-      if (e.key === "Escape") { pinned = null; restore(); }
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle("country", code); }
     });
   });
   Array.prototype.forEach.call(buttons, function (b) {
@@ -130,17 +237,30 @@
     b.addEventListener("blur", restore);
     b.addEventListener("click", function () { toggle("company", i); });
   });
+  // The key rows live inside the panel, which is rewritten: listen on the panel.
+  panel.addEventListener("click", function (e) {
+    var b = e.target.closest ? e.target.closest(".lg [data-k]") : null;
+    if (b) toggle("key", b.getAttribute("data-k"));
+  });
+  panel.addEventListener("mouseover", function (e) {
+    var b = e.target.closest ? e.target.closest(".lg [data-k]") : null;
+    if (b && !pinned) {
+      var codes = Object.keys(data.countries).filter(function (code) { return String(data.countries[code].k) === b.getAttribute("data-k"); });
+      clear(); light(codes);
+    }
+  });
+  panel.addEventListener("mouseleave", function () { if (!pinned) clear(); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && pinned) { pinned = null; restore(); } });
 
-  /* The one reveal on the home page: zones light up, most companies first. */
+  /* The one reveal on the home page: the countries come into focus, the finest last. */
   if (!reduce && canObserve) {
     mapBox.classList.add("pre");
     onceVisible(mapBox, 0.35, function () {
       requestAnimationFrame(function () {
         mapBox.classList.remove("pre");
         mapBox.classList.add("reveal");
-        // Drop the staggered delays once it has played, so hovering answers at once.
-        setTimeout(function () { mapBox.classList.remove("reveal"); }, 2600);
+        // Drop the staggered delays once it has played, so choosing answers at once.
+        setTimeout(function () { mapBox.classList.remove("reveal"); }, 2200);
       });
     });
   }

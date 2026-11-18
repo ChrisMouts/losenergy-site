@@ -241,60 +241,99 @@
   <section class="sec wrap" id="method" aria-labelledby="method-title">
     <div class="rail"><div class="rail-in">
       <h2 id="method-title">Method</h2>
-      <p>Three steps, every morning.</p>
+      <p>Each company is built from its plants up, every morning.</p>
     </div></div>
     <div class="content">
       <ol class="steps">
         <li>
           <div>
-            <h3>Map each fleet</h3>
-            <p>From each company’s own reports we record which assets it owns, their capacity, the bidding zone each one sits in and the company’s share. Maps are versioned: an estimate always uses the map as it stood on that day. A company whose map has drifted more than 5% from the capacity it declares is withheld, with the reason recorded, rather than published with a known bias.</p>
+            <h3>Every plant</h3>
+            <p>From each company’s own reports we record its farms and solar parks: their capacity, where they are and when they started. We check that list against the official registers. In Britain, a check runs every morning for any metered wind farm a company owns that its list lacks, and a person decides on each one.</p>
           </div>
         </li>
         <li>
           <div>
-            <h3>Read the grid</h3>
-            <p>Every morning we take actual generation and installed capacity by zone and production type from the ENTSO-E Transparency Platform. In Great Britain we read the meters of 43 wind farms, 77 units in all, from Elexon’s settlement data, for the four companies with large British fleets. A farm in more than one portfolio, such as London Array, is read once and shared by stake.</p>
+            <h3>Its owner</h3>
+            <p>Who holds each plant, and at what share, from the companies’ reports. Lists are versioned: an estimate always uses the fleet as it stood on that day. A company whose list has drifted more than 5% from the capacity it declares is withheld, with the reason recorded, rather than published with a known bias.</p>
           </div>
         </li>
         <li>
           <div>
-            <h3>Calibrate and seal</h3>
-            <p>Each estimate is scaled by how the model compared with the company’s own past reports, then written into the morning’s vintage, fingerprinted and committed.</p>
+            <h3>What it produced</h3>
+            <p>The plant’s own meter wherever one is published. In Britain we read 43 wind farms, 77 units in all, every half hour from Elexon’s settlement data, for the four companies with large British fleets; a farm in more than one portfolio, such as London Array, is read once and shared by stake. In Denmark we read every farm’s metered output, month by month. Everywhere else, the country’s actual generation by production type that day, from the ENTSO-E Transparency Platform.</p>
+          </div>
+        </li>
+        <li>
+          <div>
+            <h3>The company</h3>
+            <p>Every plant times its share, summed, and scaled by how the method compared with the company’s own past reports. The result is written into the morning’s vintage, fingerprinted and committed before the company reports.</p>
           </div>
         </li>
       </ol>
 
-      <div class="part" style="margin-top:72px">
-        <h3>Where meters exist: Ørsted’s UK offshore wind, Q1 2023 to September 2026</h3>
-        <p>A backtest, run after the reports were out: it shows what the method can do, not a sealed record. Read from each farm’s own meters, our estimate came within −0.1% to +1.2% of what Ørsted reported, in every period. Built from zone data alone, it ran 11% to 26% low.</p>
-        <figure class="chart ranges" aria-labelledby="range-title">
-          <figcaption id="range-title">Range of errors across all periods</figcaption>
-          <div class="chart-rows has-zero-label" role="img" aria-label="From farm meters, errors ranged from minus 0.1% to plus 1.2%. From zone data alone, from minus 26% to minus 11%.">
+      <div class="part" style="margin-top:64px">
+        <h3>What we register, side by side</h3>
+        <dl class="fields">
+          <div><dt>Our estimate</dt><dd>Metered plants as measured, the rest from the country’s output, calibrated on the company’s past reports. This is the call we are scored on.</dd></div>
+          <div><dt>Bottom-up</dt><dd>Metered plants as measured, the rest at the output of the company’s own metered plants that day, with no calibration. Registered beside our estimate for Greencoat UK Wind, TRIG, Ørsted and RWE.</dd></div>
+          <div><dt>Danish meters</dt><dd>Each Danish farm’s metered output times the company’s share: Ørsted’s Danish offshore farms and RWE’s Thor. Registered beside our estimate.</dd></div>
+          <div><dt>Two baselines</dt><dd>A seasonal normal and the same period last year: what you would estimate without us.</dd></div>
+        </dl>
+        <p class="fine">A method registered beside our estimate becomes the call only if it beats it on live scores.</p>
+      </div>
+
+      <div class="part" style="margin-top:56px">
+        <h3>Plant by plant against the country’s output</h3>
+        <p>Backtests, run after the reports were out: they show what the method can do, not a sealed record. Where we read the farms’ own meters, the estimate lands within a few percent of what the company reports. From the country’s output alone, it ran 4% to 29% low.</p>
+        <figure class="chart ranges long-labels" aria-labelledby="range-title">
+          <figcaption id="range-title">Range of errors across the periods tested; 0 is the company’s figure</figcaption>
+          <div class="chart-rows has-zero-label" role="img" aria-label="Ørsted’s UK offshore wind, 15 periods: from the farms’ meters, minus 0.1% to plus 1.2%; from the country’s output, minus 26% to minus 11%. TRIG’s UK onshore wind: from its farms’ meters, the rest scaled by them, minus 1.9% to plus 5.2% over 4 periods; from the country’s output, minus 29% to minus 4% over 3 periods.">
             <div class="chart-row">
-              <span class="chart-label">From farm meters</span>
+              <span class="chart-label">Ørsted, UK offshore: farm meters</span>
               <div class="track">
-                <span class="grid-line" style="left:28.571%"></span><span class="grid-line" style="left:57.143%"></span>
-                <span class="zero" style="left:85.714%"><span class="zero-label">Ørsted’s figure</span></span>
-                <span class="seg ours" style="left:85.429%; width:3.714%; min-width:4px"></span>
+                <span class="grid-line" style="left:0%"></span><span class="grid-line" style="left:25%"></span><span class="grid-line" style="left:50%"></span><span class="grid-line" style="left:100%"></span>
+                <span class="zero" style="left:75%"><span class="zero-label">The company’s figure</span></span>
+                <span class="seg ours" style="left:74.75%; width:3.25%; min-width:4px"></span>
               </div>
               <span class="chart-value">−0.1 to +1.2%</span>
             </div>
             <div class="chart-row">
-              <span class="chart-label">From zone data alone</span>
+              <span class="chart-label">Ørsted, UK offshore: country output</span>
               <div class="track">
-                <span class="grid-line" style="left:28.571%"></span><span class="grid-line" style="left:57.143%"></span>
-                <span class="zero" style="left:85.714%"></span>
-                <span class="seg base" style="left:11.429%; width:42.857%"></span>
+                <span class="grid-line" style="left:0%"></span><span class="grid-line" style="left:25%"></span><span class="grid-line" style="left:50%"></span><span class="grid-line" style="left:100%"></span>
+                <span class="zero" style="left:75%"></span>
+                <span class="seg base" style="left:10%; width:37.5%"></span>
               </div>
               <span class="chart-value">−26 to −11%</span>
+            </div>
+            <div class="chart-row">
+              <span class="chart-label">TRIG, UK onshore: farm meters</span>
+              <div class="track">
+                <span class="grid-line" style="left:0%"></span><span class="grid-line" style="left:25%"></span><span class="grid-line" style="left:50%"></span><span class="grid-line" style="left:100%"></span>
+                <span class="zero" style="left:75%"></span>
+                <span class="seg ours" style="left:70.25%; width:17.75%"></span>
+              </div>
+              <span class="chart-value">−1.9 to +5.2%</span>
+            </div>
+            <div class="chart-row">
+              <span class="chart-label">TRIG, UK onshore: country output</span>
+              <div class="track">
+                <span class="grid-line" style="left:0%"></span><span class="grid-line" style="left:25%"></span><span class="grid-line" style="left:50%"></span><span class="grid-line" style="left:100%"></span>
+                <span class="zero" style="left:75%"></span>
+                <span class="seg base" style="left:2.25%; width:63.25%"></span>
+              </div>
+              <span class="chart-value">−29 to −4%</span>
             </div>
           </div>
           <div class="axis" aria-hidden="true">
             <span class="spacer"></span>
-            <div class="ticks"><span class="first" style="left:0%">−30%</span><span style="left:28.571%">−20%</span><span style="left:57.143%">−10%</span><span style="left:85.714%">0</span></div>
+            <div class="ticks"><span class="first" style="left:0%">−30%</span><span style="left:25%">−20%</span><span style="left:50%">−10%</span><span style="left:75%">0</span><span style="left:100%">+10%</span></div>
             <span class="spacer"></span>
           </div>
+          <dl class="chart-note fine">
+            <div><dt>Ørsted:</dt> <dd>15 periods, Q1 2023 to September 2026, every British offshore farm metered.</dd></div>
+            <div><dt>TRIG:</dt> <dd>four periods, 2024 to the first half of 2026; three of its farms are metered (22% of the row) and the rest is scaled by their output. The method was written after these periods were reported.</dd></div>
+          </dl>
         </figure>
       </div>
     </div>
@@ -303,45 +342,46 @@
   <section class="sec wrap" id="coverage" aria-labelledby="coverage-title">
     <div class="rail"><div class="rail-in">
       <h2 id="coverage-title">Coverage</h2>
-      <p>Bidding zones in which each company has capacity in our ownership map.</p>
+      <p>What we read in each country, and which estimate it feeds. The ten companies are those on the public record so far; the plant records behind them hold every farm we read in these countries. Counts and totals only: never single plants or their owners.</p>
     </div></div>
     <div class="content">
-      <div class="matrix-scroll" tabindex="0" role="region" aria-label="Coverage by company and bidding zone">
-        <table class="matrix">
-          <caption class="sr-only">Bidding zones in which each company has capacity in our ownership map</caption>
-          <colgroup><col class="c-co"><col class="c-mw"><col><col class="c-zw"><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup>
-          <thead><tr><th class="co" scope="col">Company</th><th class="mw" scope="col">MW</th><th scope="col"><abbr title="Belgium">BE</abbr></th><th scope="col"><abbr title="Germany and Luxembourg">DE-LU</abbr></th><th scope="col"><abbr title="Denmark, west">DK1</abbr></th><th scope="col"><abbr title="Spain">ES</abbr></th><th scope="col"><abbr title="Finland">FI</abbr></th><th scope="col"><abbr title="France">FR</abbr></th><th scope="col"><abbr title="Great Britain">GB</abbr></th><th scope="col"><abbr title="Greece">GR</abbr></th><th scope="col"><abbr title="Hungary">HU</abbr></th><th scope="col"><abbr title="Ireland and Northern Ireland">IE</abbr></th><th scope="col"><abbr title="Italy">IT</abbr></th><th scope="col"><abbr title="Netherlands">NL</abbr></th><th scope="col"><abbr title="Poland">PL</abbr></th><th scope="col"><abbr title="Portugal">PT</abbr></th><th scope="col"><abbr title="Romania">RO</abbr></th><th scope="col"><abbr title="Sweden">SE</abbr></th><th scope="col"><abbr title="Türkiye">TR</abbr></th></tr></thead>
-          <tbody>
-            <tr><th class="co" scope="row">RWE<span class="tk">ETR:RWE</span></th><td class="mw">47,368*</td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Germany and Luxembourg</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Spain</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">France</span></td><td><i class="dot metered" aria-hidden="true"></i><span class="sr-only">Great Britain, metered</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Italy</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Netherlands</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Poland</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Sweden</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Türkiye</span></td></tr>
-            <tr><th class="co" scope="row">EDP Renováveis<span class="tk">ELI:EDPR</span></th><td class="mw">18,795</td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Belgium</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Germany and Luxembourg</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Spain</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">France</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Great Britain</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Greece</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Hungary</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Italy</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Netherlands</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Poland</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Portugal</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Romania</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td></tr>
-            <tr><th class="co" scope="row">Ørsted<span class="tk">CPH:ORSTED</span></th><td class="mw">13,507</td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Germany and Luxembourg</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Denmark, west</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">France</span></td><td><i class="dot metered" aria-hidden="true"></i><span class="sr-only">Great Britain, metered</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Ireland and Northern Ireland</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Netherlands</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td></tr>
-            <tr><th class="co" scope="row">Solaria<span class="tk">BME:SLR</span></th><td class="mw">3,033</td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Spain</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Greece</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Italy</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Portugal</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td></tr>
-            <tr><th class="co" scope="row">TRIG<span class="tk">LON:TRIG</span></th><td class="mw">2,269</td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Germany and Luxembourg</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Spain</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">France</span></td><td><i class="dot metered" aria-hidden="true"></i><span class="sr-only">Great Britain, metered</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Sweden</span></td><td><i class="none" aria-hidden="true"></i></td></tr>
-            <tr><th class="co" scope="row">Greencoat UK Wind<span class="tk">LON:UKW</span></th><td class="mw">1,942</td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot metered" aria-hidden="true"></i><span class="sr-only">Great Britain, metered</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td></tr>
-            <tr><th class="co" scope="row">7C Solarparken<span class="tk">ETR:HRPK</span></th><td class="mw">504</td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Belgium</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Germany and Luxembourg</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td></tr>
-            <tr><th class="co" scope="row">PNE<span class="tk">ETR:PNE3</span></th><td class="mw">478</td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Germany and Luxembourg</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td></tr>
-            <tr><th class="co" scope="row">Energiekontor<span class="tk">ETR:EKT</span></th><td class="mw">460.6</td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Germany and Luxembourg</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Great Britain</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Portugal</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td></tr>
-            <tr><th class="co" scope="row">clearvise<span class="tk">ETR:ABO</span></th><td class="mw">388</td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Germany and Luxembourg</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Finland</span></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">France</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="dot" aria-hidden="true"></i><span class="sr-only">Ireland and Northern Ireland</span></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td><td><i class="none" aria-hidden="true"></i></td></tr>
-          </tbody>
-        </table>
+      <div class="part">
+        <h3>Country by country</h3>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Coverage by country">
+          <table class="ledger cards">
+            <thead><tr><th scope="col">Country</th><th scope="col">What we read</th><th scope="col">How often</th><th scope="col">What it feeds</th></tr></thead>
+            <tbody>
+              <tr><td class="lead-cell">United Kingdom</td><td data-label="What we read">43 wind farms in four fleets, 77 units, from their own meters; seven more in Northern Ireland since September 2026</td><td data-label="How often">Every half hour</td><td data-label="What it feeds">Greencoat UK Wind, TRIG, Ørsted and RWE</td></tr>
+              <tr><td class="lead-cell">Ireland</td><td data-label="What we read">Every wind unit on the all-island market</td><td data-label="How often">Every half hour, since September 2026</td><td data-label="What it feeds">None yet</td></tr>
+              <tr><td class="lead-cell">Belgium</td><td data-label="What we read">All ten offshore wind farms</td><td data-label="How often">Every hour</td><td data-label="What it feeds">None yet: the companies’ Belgian plants are onshore and solar</td></tr>
+              <tr><td class="lead-cell">Denmark</td><td data-label="What we read">Every turbine and park, metered</td><td data-label="How often">Every month</td><td data-label="What it feeds">Ørsted’s Danish offshore farms and RWE’s Thor, beside our estimate</td></tr>
+              <tr><td class="lead-cell">Germany</td><td data-label="What we read">Every registered plant: its size, when it started, the energy it was paid for</td><td data-label="How often">Once a year</td><td data-label="What it feeds">A check of each company’s German fleet</td></tr>
+              <tr><td class="lead-cell">Twelve more</td><td data-label="What we read">The country’s output by production type</td><td data-label="How often">Every day</td><td data-label="What it feeds">Every company with plants there</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-      <ul class="cov-list" aria-label="Coverage by company">
-        <li><div class="cov-head"><span class="cov-name">RWE<span class="tk">ETR:RWE</span></span><span class="cov-mw">47,368*<small>MW</small></span></div><div class="cov-zones"><span><abbr title="Germany and Luxembourg">DE-LU</abbr></span><span><abbr title="Spain">ES</abbr></span><span><abbr title="France">FR</abbr></span><span><abbr title="Great Britain">GB</abbr><i class="dot metered" aria-hidden="true"></i><span class="sr-only">metered</span></span><span><abbr title="Italy">IT</abbr></span><span><abbr title="Netherlands">NL</abbr></span><span><abbr title="Poland">PL</abbr></span><span><abbr title="Sweden">SE</abbr></span><span><abbr title="Türkiye">TR</abbr></span></div></li>
-        <li><div class="cov-head"><span class="cov-name">EDP Renováveis<span class="tk">ELI:EDPR</span></span><span class="cov-mw">18,795<small>MW</small></span></div><div class="cov-zones"><span><abbr title="Belgium">BE</abbr></span><span><abbr title="Germany and Luxembourg">DE-LU</abbr></span><span><abbr title="Spain">ES</abbr></span><span><abbr title="France">FR</abbr></span><span><abbr title="Great Britain">GB</abbr></span><span><abbr title="Greece">GR</abbr></span><span><abbr title="Hungary">HU</abbr></span><span><abbr title="Italy">IT</abbr></span><span><abbr title="Netherlands">NL</abbr></span><span><abbr title="Poland">PL</abbr></span><span><abbr title="Portugal">PT</abbr></span><span><abbr title="Romania">RO</abbr></span></div></li>
-        <li><div class="cov-head"><span class="cov-name">Ørsted<span class="tk">CPH:ORSTED</span></span><span class="cov-mw">13,507<small>MW</small></span></div><div class="cov-zones"><span><abbr title="Germany and Luxembourg">DE-LU</abbr></span><span><abbr title="Denmark, west">DK1</abbr></span><span><abbr title="France">FR</abbr></span><span><abbr title="Great Britain">GB</abbr><i class="dot metered" aria-hidden="true"></i><span class="sr-only">metered</span></span><span><abbr title="Ireland and Northern Ireland">IE</abbr></span><span><abbr title="Netherlands">NL</abbr></span></div></li>
-        <li><div class="cov-head"><span class="cov-name">Solaria<span class="tk">BME:SLR</span></span><span class="cov-mw">3,033<small>MW</small></span></div><div class="cov-zones"><span><abbr title="Spain">ES</abbr></span><span><abbr title="Greece">GR</abbr></span><span><abbr title="Italy">IT</abbr></span><span><abbr title="Portugal">PT</abbr></span></div></li>
-        <li><div class="cov-head"><span class="cov-name">TRIG<span class="tk">LON:TRIG</span></span><span class="cov-mw">2,269<small>MW</small></span></div><div class="cov-zones"><span><abbr title="Germany and Luxembourg">DE-LU</abbr></span><span><abbr title="Spain">ES</abbr></span><span><abbr title="France">FR</abbr></span><span><abbr title="Great Britain">GB</abbr><i class="dot metered" aria-hidden="true"></i><span class="sr-only">metered</span></span><span><abbr title="Sweden">SE</abbr></span></div></li>
-        <li><div class="cov-head"><span class="cov-name">Greencoat UK Wind<span class="tk">LON:UKW</span></span><span class="cov-mw">1,942<small>MW</small></span></div><div class="cov-zones"><span><abbr title="Great Britain">GB</abbr><i class="dot metered" aria-hidden="true"></i><span class="sr-only">metered</span></span></div></li>
-        <li><div class="cov-head"><span class="cov-name">7C Solarparken<span class="tk">ETR:HRPK</span></span><span class="cov-mw">504<small>MW</small></span></div><div class="cov-zones"><span><abbr title="Belgium">BE</abbr></span><span><abbr title="Germany and Luxembourg">DE-LU</abbr></span></div></li>
-        <li><div class="cov-head"><span class="cov-name">PNE<span class="tk">ETR:PNE3</span></span><span class="cov-mw">478<small>MW</small></span></div><div class="cov-zones"><span><abbr title="Germany and Luxembourg">DE-LU</abbr></span></div></li>
-        <li><div class="cov-head"><span class="cov-name">Energiekontor<span class="tk">ETR:EKT</span></span><span class="cov-mw">460.6<small>MW</small></span></div><div class="cov-zones"><span><abbr title="Germany and Luxembourg">DE-LU</abbr></span><span><abbr title="Great Britain">GB</abbr></span><span><abbr title="Portugal">PT</abbr></span></div></li>
-        <li><div class="cov-head"><span class="cov-name">clearvise<span class="tk">ETR:ABO</span></span><span class="cov-mw">388<small>MW</small></span></div><div class="cov-zones"><span><abbr title="Germany and Luxembourg">DE-LU</abbr></span><span><abbr title="Finland">FI</abbr></span><span><abbr title="France">FR</abbr></span><span><abbr title="Ireland and Northern Ireland">IE</abbr></span></div></li>
-      </ul>
-      <div class="legend">
-        <span class="only-matrix"><i class="dot" aria-hidden="true"></i>Capacity in the zone</span>
-        <span><i class="dot metered" aria-hidden="true"></i>Read from the farms’ own meters</span>
+      <div class="part">
+        <h3>Companies on the public record</h3>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Coverage by company">
+          <table class="ledger cards">
+            <thead><tr><th scope="col">Company</th><th scope="col" class="r">MW declared</th><th scope="col">Countries</th><th scope="col">Read plant by plant</th></tr></thead>
+            <tbody>
+              <tr><td class="lead-cell">RWE<span class="sub">ETR:RWE</span></td><td data-label="MW declared" class="r num nowrap">47,368*</td><td data-label="Countries">DE, DK, ES, FR, IT, NL, PL, SE, TR, UK</td><td data-label="Read plant by plant">British wind farms, in the estimate; Thor in Denmark, beside it</td></tr>
+              <tr><td class="lead-cell">EDP Renováveis<span class="sub">ELI:EDPR</span></td><td data-label="MW declared" class="r num nowrap">18,795</td><td data-label="Countries">BE, DE, ES, FR, GR, HU, IT, NL, PL, PT, RO, UK</td><td data-label="Read plant by plant">–</td></tr>
+              <tr><td class="lead-cell">Ørsted<span class="sub">CPH:ORSTED</span></td><td data-label="MW declared" class="r num nowrap">13,507</td><td data-label="Countries">DE, DK, FR, IE, NL, UK</td><td data-label="Read plant by plant">British offshore farms, in the estimate; Danish offshore farms, beside it</td></tr>
+              <tr><td class="lead-cell">Solaria<span class="sub">BME:SLR</span></td><td data-label="MW declared" class="r num nowrap">3,033</td><td data-label="Countries">ES, GR, IT, PT</td><td data-label="Read plant by plant">–</td></tr>
+              <tr><td class="lead-cell">TRIG<span class="sub">LON:TRIG</span></td><td data-label="MW declared" class="r num nowrap">2,269</td><td data-label="Countries">DE, ES, FR, SE, UK</td><td data-label="Read plant by plant">British offshore farms and three onshore farms, in the estimate</td></tr>
+              <tr><td class="lead-cell">Greencoat UK Wind<span class="sub">LON:UKW</span></td><td data-label="MW declared" class="r num nowrap">1,942</td><td data-label="Countries">UK</td><td data-label="Read plant by plant">17 British farms, in the estimate; seven Northern Irish farms beside it from January</td></tr>
+              <tr><td class="lead-cell">7C Solarparken<span class="sub">ETR:HRPK</span></td><td data-label="MW declared" class="r num nowrap">504</td><td data-label="Countries">BE, DE</td><td data-label="Read plant by plant">–</td></tr>
+              <tr><td class="lead-cell">PNE<span class="sub">ETR:PNE3</span></td><td data-label="MW declared" class="r num nowrap">478</td><td data-label="Countries">DE</td><td data-label="Read plant by plant">–</td></tr>
+              <tr><td class="lead-cell">Energiekontor<span class="sub">ETR:EKT</span></td><td data-label="MW declared" class="r num nowrap">460.6</td><td data-label="Countries">DE, PT, UK</td><td data-label="Read plant by plant">–</td></tr>
+              <tr><td class="lead-cell">clearvise<span class="sub">ETR:ABO</span></td><td data-label="MW declared" class="r num nowrap">388</td><td data-label="Countries">DE, FI, FR, IE</td><td data-label="Read plant by plant">–</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fine" style="margin-top:16px">MW is the capacity each company declares. *RWE declares 47,368 MW; 33,551 MW of it is mapped plant by plant, and Thor, still being commissioned, is read from the Danish meters. EDP Renováveis’ and Ørsted’s plants outside Europe are not read from grid data yet. Every company’s German plants are checked against the national register.</p>
       </div>
-      <p class="fine" style="margin-top:16px">MW is the capacity each company declares, as recorded in our ownership map. *RWE declares 47,368 MW; 33,551 MW of it is mapped to the zones shown.</p>
     </div>
   </section>
 
@@ -389,10 +429,11 @@
         <li><b>Elexon BMRS</b><span>Metered output of British wind farms, from settlement data</span><em>Contains BSC information licensed under the <a href="https://www.elexon.co.uk/bsc/data/open-data-requests/bsc-open-data-licence/">BSC Open Data Licence</a>.</em></li>
         <li><b>National Energy System Operator</b><span>British embedded wind and solar generation</span><em>Supported by National Energy SO Open Data</em></li>
         <li><b>Department for Energy Security and Net Zero</b><span>British installed capacity</span><em>Contains public sector information licensed under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0</a>.</em></li>
+        <li><b>Bundesnetzagentur, Marktstammdatenregister</b><span>Germany’s register of every power plant: capacity, commissioning date and place, used to check each company’s German fleet</span><em>Data licence Germany, attribution, version 2.0 (<a href="https://www.govdata.de/dl-de/by-2-0">dl-de/by-2-0</a>).</em></li>
         <li><b>National capacity statistics</b><span>Installed capacity for Spain, Portugal, Ireland, Sweden and Belgium, from grid operators and industry bodies, including Red Eléctrica and REN</span></li>
         <li><b>Company reports</b><span>Fleets, stakes and reported production, from annual and interim reports</span></li>
       </ul>
-      <p style="margin-top:24px">The licence terms of every source are recorded with each vintage and are available on request.</p>
+      <p style="margin-top:24px">Plant-level data from Ireland’s market operator and Denmark’s energy agency is used under their own terms and shown here only as counts. The licence terms of every source are recorded with each vintage and are available on request.</p>
     </div>
   </section>
 </main>

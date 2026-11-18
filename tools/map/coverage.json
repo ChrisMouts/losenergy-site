@@ -1,0 +1,353 @@
+{
+ "classes": {
+  "4": {
+   "label": "Each farm, through the day",
+   "short": "each farm, every half hour or hour"
+  },
+  "3": {
+   "label": "Each farm, every month",
+   "short": "each farm, every month"
+  },
+  "2": {
+   "label": "Each plant, once a year",
+   "short": "each plant, once a year"
+  },
+  "1": {
+   "label": "The whole country, every day",
+   "short": "the whole country, every day"
+  }
+ },
+ "countries": {
+  "GB": {
+   "name": "United Kingdom",
+   "k": 4,
+   "read": "43 wind farms in four of the fleets, from their own meters, every half hour; in Northern Ireland, seven more since September 2026.",
+   "feeds": "The estimates for Greencoat UK Wind, TRIG, Ørsted and RWE.",
+   "companies": [
+    0,
+    1,
+    2,
+    4,
+    5,
+    8
+   ],
+   "how": "each farm, every half hour"
+  },
+  "IE": {
+   "name": "Ireland",
+   "k": 4,
+   "read": "Every wind unit on the all-island market, every half hour, since September 2026.",
+   "feeds": "No estimate yet: Ørsted’s and clearvise’s Irish plants are still read from the country’s output.",
+   "companies": [
+    2,
+    9
+   ],
+   "how": "each farm, every half hour"
+  },
+  "BE": {
+   "name": "Belgium",
+   "k": 4,
+   "read": "All ten offshore wind farms, every hour.",
+   "feeds": "No estimate yet: the companies’ Belgian plants are onshore and solar, read from the country’s output.",
+   "companies": [
+    1,
+    6
+   ],
+   "how": "each farm, every hour"
+  },
+  "DK": {
+   "name": "Denmark",
+   "k": 3,
+   "read": "Every turbine and park, metered, every month.",
+   "feeds": "Ørsted’s Danish offshore farms and RWE’s Thor, recorded beside the estimate.",
+   "companies": [
+    0,
+    2
+   ]
+  },
+  "DE": {
+   "name": "Germany",
+   "k": 2,
+   "read": "Every registered plant: its size, when it started, and the energy it was paid for each year.",
+   "feeds": "A check on each company’s German fleet. The daily estimate comes from the country’s output.",
+   "companies": [
+    0,
+    1,
+    2,
+    4,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "ES": {
+   "name": "Spain",
+   "k": 1,
+   "companies": [
+    0,
+    1,
+    3,
+    4
+   ]
+  },
+  "PT": {
+   "name": "Portugal",
+   "k": 1,
+   "companies": [
+    1,
+    3,
+    8
+   ]
+  },
+  "FR": {
+   "name": "France",
+   "k": 1,
+   "companies": [
+    0,
+    1,
+    2,
+    4,
+    9
+   ]
+  },
+  "IT": {
+   "name": "Italy",
+   "k": 1,
+   "companies": [
+    0,
+    1,
+    3
+   ]
+  },
+  "NL": {
+   "name": "Netherlands",
+   "k": 1,
+   "companies": [
+    0,
+    1,
+    2
+   ]
+  },
+  "PL": {
+   "name": "Poland",
+   "k": 1,
+   "companies": [
+    0,
+    1
+   ]
+  },
+  "SE": {
+   "name": "Sweden",
+   "k": 1,
+   "companies": [
+    0,
+    4
+   ]
+  },
+  "FI": {
+   "name": "Finland",
+   "k": 1,
+   "companies": [
+    9
+   ]
+  },
+  "GR": {
+   "name": "Greece",
+   "k": 1,
+   "companies": [
+    1,
+    3
+   ]
+  },
+  "HU": {
+   "name": "Hungary",
+   "k": 1,
+   "companies": [
+    1
+   ]
+  },
+  "RO": {
+   "name": "Romania",
+   "k": 1,
+   "companies": [
+    1
+   ]
+  },
+  "TR": {
+   "name": "Türkiye",
+   "k": 1,
+   "companies": [
+    0
+   ]
+  }
+ },
+ "companies": [
+  {
+   "name": "RWE",
+   "ticker": "ETR:RWE",
+   "mw": "47,368",
+   "countries": [
+    "DE",
+    "DK",
+    "ES",
+    "FR",
+    "GB",
+    "IT",
+    "NL",
+    "PL",
+    "SE",
+    "TR"
+   ],
+   "plant": [
+    [
+     "GB",
+     "its British wind farms, from their own meters, in the estimate"
+    ],
+    [
+     "DK",
+     "Thor, from the Danish park meters, beside the estimate"
+    ]
+   ],
+   "note": "33,551 MW of it is mapped plant by plant; Thor, still being commissioned, is read from the Danish meters."
+  },
+  {
+   "name": "EDP Renováveis",
+   "ticker": "ELI:EDPR",
+   "mw": "18,795",
+   "countries": [
+    "BE",
+    "DE",
+    "ES",
+    "FR",
+    "GB",
+    "GR",
+    "HU",
+    "IT",
+    "NL",
+    "PL",
+    "PT",
+    "RO"
+   ],
+   "plant": [],
+   "note": "Its plants outside Europe are not read from grid data yet."
+  },
+  {
+   "name": "Ørsted",
+   "ticker": "CPH:ORSTED",
+   "mw": "13,507",
+   "countries": [
+    "DE",
+    "DK",
+    "FR",
+    "GB",
+    "IE",
+    "NL"
+   ],
+   "plant": [
+    [
+     "GB",
+     "its British offshore farms, from their own meters, in the estimate"
+    ],
+    [
+     "DK",
+     "its Danish offshore farms, from the park meters, beside the estimate"
+    ]
+   ],
+   "note": "Its plants outside Europe are not read from grid data yet."
+  },
+  {
+   "name": "Solaria",
+   "ticker": "BME:SLR",
+   "mw": "3,033",
+   "countries": [
+    "ES",
+    "GR",
+    "IT",
+    "PT"
+   ],
+   "plant": [],
+   "note": ""
+  },
+  {
+   "name": "TRIG",
+   "ticker": "LON:TRIG",
+   "mw": "2,269",
+   "countries": [
+    "DE",
+    "ES",
+    "FR",
+    "GB",
+    "SE"
+   ],
+   "plant": [
+    [
+     "GB",
+     "its British offshore farms and three onshore farms, from their own meters, in the estimate"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "name": "Greencoat UK Wind",
+   "ticker": "LON:UKW",
+   "mw": "1,942",
+   "countries": [
+    "GB"
+   ],
+   "plant": [
+    [
+     "GB",
+     "17 British farms from their own meters, in the estimate; its seven Northern Irish farms beside it from January"
+    ]
+   ],
+   "note": ""
+  },
+  {
+   "name": "7C Solarparken",
+   "ticker": "ETR:HRPK",
+   "mw": "504",
+   "countries": [
+    "BE",
+    "DE"
+   ],
+   "plant": [],
+   "note": ""
+  },
+  {
+   "name": "PNE",
+   "ticker": "ETR:PNE3",
+   "mw": "478",
+   "countries": [
+    "DE"
+   ],
+   "plant": [],
+   "note": ""
+  },
+  {
+   "name": "Energiekontor",
+   "ticker": "ETR:EKT",
+   "mw": "460.6",
+   "countries": [
+    "DE",
+    "GB",
+    "PT"
+   ],
+   "plant": [],
+   "note": ""
+  },
+  {
+   "name": "clearvise",
+   "ticker": "ETR:ABO",
+   "mw": "388",
+   "countries": [
+    "DE",
+    "FI",
+    "FR",
+    "IE"
+   ],
+   "plant": [],
+   "note": ""
+  }
+ ]
+}

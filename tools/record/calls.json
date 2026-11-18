@@ -1,0 +1,98 @@
+{
+ "as_of": "2026-11-18",
+ "from": "2026-11-01",
+ "to": "2027-05-01",
+ "groups": [
+  {
+   "label": "Nine months 2026",
+   "calls": [
+    {
+     "company": "PNE AG",
+     "short": "PNE",
+     "period": "Q3 2026",
+     "period_long": "third quarter 2026",
+     "status": "scored",
+     "sealed": "2026-11-04",
+     "sealed_time": "00:00 UTC",
+     "reported": "2026-11-12",
+     "ours_gwh": 187.1,
+     "theirs_gwh": 181.0,
+     "error_pct": 3.4,
+     "normal_pct": -11.7,
+     "last_year_pct": -14.6,
+     "note": "Reported in its nine-month statement; on the nine months, +1.0%."
+    },
+    {
+     "company": "Solaria",
+     "short": "Solaria",
+     "period": "9M 2026",
+     "period_long": "nine months 2026",
+     "status": "sealed",
+     "sealed": "2026-11-05",
+     "revised": "2026-11-09"
+    },
+    {
+     "company": "7C Solarparken",
+     "short": "7C Solarparken",
+     "period": "9M 2026",
+     "period_long": "nine months 2026",
+     "status": "sealed",
+     "sealed": "2026-11-04",
+     "revised": "2026-11-04"
+    }
+   ]
+  },
+  {
+   "label": "Full year 2026",
+   "seal_from": "2027-01-01",
+   "calls": [
+    {
+     "company": "EDP Renováveis",
+     "short": "EDP Renováveis",
+     "deadline": "2027-01-20"
+    },
+    {
+     "company": "Greencoat UK Wind",
+     "short": "Greencoat UK Wind",
+     "deadline": "2027-01-28"
+    },
+    {
+     "company": "TRIG",
+     "short": "TRIG",
+     "deadline": "2027-02-02"
+    },
+    {
+     "company": "RWE",
+     "short": "RWE",
+     "deadline": "2027-02-03"
+    },
+    {
+     "company": "Ørsted",
+     "short": "Ørsted",
+     "deadline": "2027-02-04"
+    },
+    {
+     "company": "Solaria",
+     "short": "Solaria",
+     "deadline": "2027-02-24"
+    },
+    {
+     "company": "PNE AG",
+     "short": "PNE",
+     "deadline": "2027-03-24",
+     "announced": true
+    },
+    {
+     "company": "Energiekontor",
+     "short": "Energiekontor",
+     "deadline": "2027-03-26"
+    },
+    {
+     "company": "clearvise",
+     "short": "clearvise",
+     "deadline": "2027-04-15"
+    }
+   ]
+  }
+ ]
+}

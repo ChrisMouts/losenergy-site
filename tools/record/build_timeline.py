@@ -37,6 +37,11 @@ def pct(v):
     return f"{v:+.1f}%".replace("-", "−")
 
 
+def gwh(v):
+    """1508.3 -> 1,508.3"""
+    return f"{v:,.1f}"
+
+
 # month ticks
 ticks, d = [], D0
 while d < D1:
@@ -63,13 +68,13 @@ for g in cfg["groups"]:
                      f'<span class="tl-lab" style="--x:{b}%">{ahead} days ahead</span>')
             res = f'<span class="tl-res ours">{pct(c["error_pct"])}</span>'
             sr = (f'{c["company"]}, {c["period_long"]}: sealed {day(c["sealed"], True)}, reported '
-                  f'{day(c["reported"], True)}, {ahead} days later; our estimate {c["ours_gwh"]} GWh against '
-                  f'{c["theirs_gwh"]} GWh, {pct(c["error_pct"])}.')
+                  f'{day(c["reported"], True)}, {ahead} days later; our estimate {gwh(c["ours_gwh"])} GWh against '
+                  f'{gwh(c["theirs_gwh"])} GWh, {pct(c["error_pct"])}.')
             details.append({
                 "kind": "scored", "title": f'{c["company"]}, {c["period_long"]}',
                 "sub": f'Sealed {day(c["sealed"], True)}, {c["sealed_time"]}. Reported {day(c["reported"], True)}, '
                        f'{ahead} days later.',
-                "reported": c["reported"], "ours": c["ours_gwh"], "theirs": c["theirs_gwh"], "error": c["error_pct"],
+                "reported": c["reported"], "ours": gwh(c["ours_gwh"]), "theirs": gwh(c["theirs_gwh"]), "error": c["error_pct"],
                 "normal": c["normal_pct"], "last": c["last_year_pct"], "note": c.get("note", "")})
         elif st == "sealed":
             a, b = x(c["sealed"]), x(AS_OF)

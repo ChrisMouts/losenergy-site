@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-18",
+ "as_of": "2026-11-20",
  "from": "2026-11-01",
  "to": "2027-05-01",
  "groups": [
@@ -25,11 +25,18 @@
     {
      "company": "Solaria",
      "short": "Solaria",
-     "period": "9M 2026",
-     "period_long": "nine months 2026",
-     "status": "sealed",
-     "sealed": "2026-11-05",
-     "revised": "2026-11-09"
+     "period": "Q3 2026",
+     "period_long": "third quarter 2026",
+     "status": "scored",
+     "sealed": "2026-11-09",
+     "sealed_time": "13:21 UTC",
+     "reported": "2026-11-19",
+     "ours_gwh": 1508.3,
+     "theirs_gwh": 1426.0,
+     "error_pct": 5.8,
+     "normal_pct": 11.7,
+     "last_year_pct": -19.2,
+     "note": "First sealed on 5 November and revised on 9 November; the revision is the one scored. Reported with its nine-month results; on the nine months, +2.6%."
     },
     {
      "company": "7C Solarparken",

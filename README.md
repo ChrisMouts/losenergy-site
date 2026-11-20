@@ -17,7 +17,7 @@ The LosEnergy website: two static pages, served by GitHub Pages at https://losen
 | `robots.txt`, `sitemap.xml` | For search engines |
 | `.nojekyll` | Tells GitHub Pages to publish the files as they are |
 
-No build step, no tracking, no cookies, no third-party requests.
+No build step and no cookies. One third-party request: Cloudflare Web Analytics, which counts visits without cookies (the snippet at the end of each page).
 
 The map's country shapes are from Natural Earth (public domain). The map is static SVG written by `tools/map/` (see its README); run it again when what we read in a country changes.
 

@@ -112,6 +112,9 @@ for g in cfg["groups"]:
 def detail_html(dd):
     if dd["kind"] == "scored":
         def bar(label, v, cls):
+            if v is None:   # a benchmark that was not sealed for this call
+                return (f'<div class="db-row"><span class="db-l">{label}</span><span class="db-t">'
+                        f'<i class="db-zero"></i></span><span class="db-v">not sealed</span></div>')
             left, width = (50, 50 * v / 20) if v >= 0 else (50 + 50 * v / 20, -50 * v / 20)
             return (f'<div class="db-row"><span class="db-l">{label}</span><span class="db-t">'
                     f'<i class="db-zero"></i><i class="db-bar {cls}" style="left:{left:.2f}%;width:{width:.2f}%">'

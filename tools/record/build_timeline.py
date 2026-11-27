@@ -75,7 +75,7 @@ for g in cfg["groups"]:
                 "sub": f'Sealed {day(c["sealed"], True)}, {c["sealed_time"]}. Reported {day(c["reported"], True)}, '
                        f'{ahead} days later.',
                 "reported": c["reported"], "ours": gwh(c["ours_gwh"]), "theirs": gwh(c["theirs_gwh"]), "error": c["error_pct"],
-                "normal": c["normal_pct"], "last": c["last_year_pct"], "note": c.get("note", "")})
+                "normal": c["normal_pct"], "last": c.get("last_year_pct"), "note": c.get("note", "")})
         elif st == "sealed":
             a, b = x(c["sealed"]), x(AS_OF)
             track = (f'<i class="tl-bar open" style="--a:{a}%;--b:{b}%"></i>'
@@ -120,7 +120,10 @@ def detail_html(dd):
                 f'<div class="td-big"><span class="td-err">{pct(dd["error"])}</span><span>{dd["ours"]} GWh sealed against '
                 f'{dd["theirs"]} GWh reported.</span></div><p class="td-note">{escape(dd["note"])}</p>'
                 f'<div class="db">{bar("Our estimate", dd["error"], "ours")}'
-                f'{bar("Seasonal normal", dd["normal"], "base")}{bar("Same period last year", dd["last"], "base")}</div>')
+                f'{bar("Seasonal normal", dd["normal"], "base")}'
+                + (bar("Same period last year", dd["last"], "base") if dd["last"] is not None else
+                   '<div class="db-row"><span class="db-l">Same period last year</span><span class="db-t"></span>'
+                   '<span class="db-v">not sealed</span></div>') + '</div>')
     k = {"sealed": "Sealed, waiting for the report", "to_seal": "To be sealed"}[dd["kind"]]
     return (f'<p class="td-k">{k}</p><h3>{escape(dd["title"])}</h3><p class="td-sub">{escape(dd["sub"])}</p>'
             f'<p class="td-body">{escape(dd["body"])}</p>')

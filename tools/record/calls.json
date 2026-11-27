@@ -1,5 +1,5 @@
 {
- "as_of": "2026-11-20",
+ "as_of": "2026-11-27",
  "from": "2026-11-01",
  "to": "2027-05-01",
  "groups": [
@@ -41,11 +41,18 @@
     {
      "company": "7C Solarparken",
      "short": "7C Solarparken",
-     "period": "9M 2026",
-     "period_long": "nine months 2026",
-     "status": "sealed",
+     "period": "Q3 2026",
+     "period_long": "third quarter 2026",
+     "status": "scored",
      "sealed": "2026-11-04",
-     "revised": "2026-11-04"
+     "sealed_time": "15:53 UTC",
+     "reported": "2026-11-24",
+     "ours_gwh": 158.4,
+     "theirs_gwh": 153.0,
+     "error_pct": 3.5,
+     "normal_pct": 4.5,
+     "last_year_pct": null,
+     "note": "First sealed at 00:00 UTC and revised at 15:53 UTC the same day; the revision is the one scored. Scored on metered output, reported with its nine-month results; on the nine months, +1.4%. Same period last year was not sealed for this report."
     }
    ]
   },
